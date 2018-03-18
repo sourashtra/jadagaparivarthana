@@ -1,10 +1,72 @@
+{% load bootstrap %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome to KUSO</title>
-</head>
-<body>
-Hello World
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+        <title>Bootstrap form example</title>
+        <style type="text/css">
+            .multiple-checkbox ul { /* Used to hide <li> elements in multiple checkbox forms */
+              padding-left: 0px;
+              list-style: none;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <h1>KARNATAKA UNITED SOURASHTRA ORGANISATION ®</h1>
+
+                    <p>Regd. Office : # 66, 6th Main, 4th Block, Rajajinagar, Bangalore - 560 010. Mobile : +91-9902264195
+Admn.Off: KUSO, C/o. Pharma Associates, S-1859, 1st ‘G’ Main, ‘D’ Block, M.K.K. Road, Rajajinagar 2nd Stage, Bengaluru - 560010.</p>
+                </div>
+            </div>
+
+            <!-- basic example -->
+            <div class="row">
+                <div class="span12">
+                    <h2>BRIDEGROOM / BRIDE INFORMATION</h2>
+
+                    <hr />
+
+                    <form class="form" role="form" action="/save_application"  method="post">
+                        {{ form|bootstrap }}
+                        {%csrf_token%}
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <input type="submit" class="btn btn-primary" value="Submit" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+            <!-- horizontal form -->
+            <div class="row">
+                <div class="span12">
+                    <h2>Horizontal form</h2>
+
+                    <hr />
+
+                    <form class="form-horizontal" role="form" action="/save_application" method="post">
+                        {{ form|bootstrap_horizontal }}
+                        {%csrf_token%}
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <input type="submit" class="btn btn-primary" value="Submit" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- scripts -->
+        <script src="http://code.jquery.com/jquery.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
 </body>
-</html>
